@@ -9,6 +9,8 @@ import { OrganizerComponent } from './organizer/organizer.component';
 import {MomentPipe} from './shared/moment.pipe';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule, MatDividerModule, MatInputModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,11 @@ import {HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

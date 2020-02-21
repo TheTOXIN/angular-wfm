@@ -4,6 +4,7 @@ section {
 
   header {
     margin-bottom: 1rem;
+    text-align: center;
   }
 }
 
@@ -14,4 +15,35 @@ section {
   padding: .5rem 1rem;
   border: 1px solid #ccc;
   margin-bottom: .5rem;
+
+  span {
+    strong {
+      padding-right: 5px;
+    }
+  }
+}
+
+.form-title {
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+.form-title-btn {
+  width: 100%;
+}
+
+.organizer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  div {
+    width: 100%;
+    padding: .5rem 1rem;
+  }
+}
+
+.tasks-list {
+  height: 300px;
+  overflow-y: scroll;
 }

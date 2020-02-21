@@ -11,7 +11,7 @@ import {switchMap} from 'rxjs/operators';
 })
 export class OrganizerComponent implements OnInit {
 
-  taskForm: FormGroup;
+  titleForm: FormControl;
   tasks: Task[] = [];
 
   constructor(
@@ -28,19 +28,19 @@ export class OrganizerComponent implements OnInit {
         this.tasks = tasks;
       });
 
-    this.taskForm = new FormGroup({
-      title: new FormControl('', Validators.required)
-    });
+    this.titleForm = new FormControl('', Validators.required);
   }
 
   submit() {
-    const title = this.taskForm.value.title;
+    const title = this.titleForm.value;
     const date = this.dateService.date.value.format('DD-MM-YYYY');
 
     const task: Task = {title, date};
 
     this.taskService.create(task).subscribe(res => {
-      this.taskForm.reset();
+      this.titleForm.reset();
+      this.titleForm.setErrors(null);
+
       this.tasks.push(res);
     }, err => {
       alert('ERROR CREATE: ' + err);
